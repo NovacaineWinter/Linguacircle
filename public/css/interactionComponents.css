@@ -1,0 +1,14 @@
+.interaction-header-button{
+    text-align: center;
+    font-size: 16px;
+    padding: 6px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+    font-weight: 300;
+    text-transform: uppercase;   
+}
+
+.active-button{
+	background-color: #ccf1ff;
+}

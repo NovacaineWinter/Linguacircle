@@ -12,5 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+	if (Auth::check()) {
+	    
+	    // The user is logged in...
+    	return redirect('/home');
+
+	}else{		
+
+		//user is not logged in
+    	return view('outside.outsideMasterTemplate')->with('user',Auth::user());
+
+	}
+
 });
+
+Auth::routes();
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+});
+
+Route::get('/ajaxContent', 'insideAjaxPageload@index');
